@@ -18,7 +18,7 @@
 
 .equ BootRAM, 0xF108F85F
 
-.section .text.Reset_Handler
+.section .text.Reset_Handler, "ax", %progbits
 .weak Reset_Handler
 .type Reset_Handler, %function
 .thumb_func
