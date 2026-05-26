@@ -21,6 +21,7 @@
 .section .text.Reset_Handler
 .weak Reset_Handler
 .type Reset_Handler, %function
+.thumb_func
 Reset_Handler:
     /* 复制data段 */
     ldr r1, =_sidata
@@ -50,11 +51,11 @@ LoopFillZeroBss:
     bl main
     b .
 
-.section .text.Default_Handler
+.section .text.Reset_Handler,"ax",%progbits
 Default_Handler:
     b .
 
-.section .isr_vector
+.section .isr_vector,"a",%progbits
 isr_vector:
     .word _estack
     .word Reset_Handler
