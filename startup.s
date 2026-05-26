@@ -51,7 +51,7 @@ LoopFillZeroBss:
     bl main
     b .
 
-.section .text.Reset_Handler,"ax",%progbits
+.section .text.Default_Handler,"ax",%progbits
 Default_Handler:
     b .
 
